@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio of Ulrich Britz - Game/Software Dev</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6c2aae3f42.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul id="sidemenu">
+                <i class="fa-solid fa-x" onclick="closemenu()"></i>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <i class="fa-solid fa-ellipsis-vertical" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Game and Software Dev</p>
+            <h1>Hello World! I'm <span>Ulrich</span> Britz.</h1>
+        </div>
+    </div>
+</div>
+<!----------about------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src ="images/ulrich.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta 
+                    voluptas animi ex vitae aliquam deserunt molestiae officia, 
+                    laborum possimus vero, tempora, ipsum id quisquam voluptates 
+                    earum maiores enim ipsa beatae.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Game Design and Development</span><br>Unity 2D & 3D</li>
+                            <li><span>Web Development</span><br>Website & Web App Development</li>
+                            <li><span>Languages</span><br>C#, Python, Rust, HTML, CSS, JS</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2022 - Current </span><br>Andromeda Labs Lead Developer</li>
+                            <li><span>2021 - 2022</span><br>Sociables Kitchen and Tavern - Server</li>
+                            <li><span>2018 - 2021</span><br>Coffee Culture - Barista</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2018 - 2022 </span><br>Wilfred Laurier University - Honours Degree in Game Design and Development and Minor in Leadership.</li>
+                            <li><span>2012 - 2016</span><br>Pearson High School Diploma</li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------Services------------>
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-gamepad"></i>
+                <h2>Game Design and Development</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Deleniti pariatur doloremque omnis perferendis, exercitationem 
+                    voluptas cum quos dicta nisi. Debitis totam, maxime voluptatibus 
+                    commodi expedita repellendus veritatis nostrum optio fuga.</p>
+                    <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-globe"></i>
+                <h2>Web Design</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Deleniti pariatur doloremque omnis perferendis, exercitationem 
+                    voluptas cum quos dicta nisi. Debitis totam, maxime voluptatibus 
+                    commodi expedita repellendus veritatis nostrum optio fuga.</p>
+                    <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Software Development</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Deleniti pariatur doloremque omnis perferendis, exercitationem 
+                    voluptas cum quos dicta nisi. Debitis totam, maxime voluptatibus 
+                    commodi expedita repellendus veritatis nostrum optio fuga.</p>
+                    <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------Portfolio----------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work-1.jpg">
+                <div class="layer">
+                    <h3>Andromaverse</h3>
+                    <p>My current project at Andromeda Labs:<br>An open world role-playing game that implements the use of 
+                        Crypto transactions and NFT's from the Andromada Collection.<br>The core gameplay loops are discovering/roaming, 
+                        breeding, evolving, battling and crafting.<br>I am the sole programmer on the game design team.<br>I work alongside a very talented group of artists, animators 
+                        and other individuals to bring the Andromaverse to life.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-2.PNG">
+                <div class="layer">
+                    <h3>Lucid Dreamland</h3>
+                    <p>My final assignment in my Game Design and Development class.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-3.jpg">
+                <div class="layer">
+                    <h3>Orb Wars</h3>
+                    <p>A passion project I am current working on Using unity and C#.<br>A 3D Hack and Slash, Strategy video game.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+</div>
+
+<!------------contact---------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-envelope"></i></i>ulrich.britz1998@gmail.com</p>
+                <p><i class="fa-solid fa-mobile-screen-button"></i>+1 416 845 9009</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/ulrichbritz/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/ulrich-britz-701a49165/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/ulrich.britz.7" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://twitter.com/UlrichBritz" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+                <a href="Docs/ulrich_resume_2023.pdf" download class="btn btn2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright <i class="fa-regular fa-copyright"></i> Ulrich Britz <i class="fa-solid fa-gamepad"></i>. Made following Easy Tutorials</p>
+    </div>
+</div>
+
+
+
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+<script>
+
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyPzT4GT9cLdaXlfZ_3WknqoCJY9-_V9yDmMb36uc3bVd_gAkmc5T-kgFtPI8jmZNG0pA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message Sent!";
+            setTimeout(function(){
+                msg.innerHTML = "";
+            }, 5000)
+            form.reset()
+        })
+        .catch(error => {
+            msg.innerHTML = "Message Sent!";
+            setTimeout(function(){
+                msg.innerHTML = "";
+            }, 5000)
+            form.reset()
+        })
+    })
+  </script>
+
+</body>
+</html>
