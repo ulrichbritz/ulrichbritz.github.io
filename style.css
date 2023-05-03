@@ -272,16 +272,7 @@ nav ul li a:hover::after{
 }
 
 .layer a{
-    margin-top: 20px;
-    color: red;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 60px;
-    background: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-align: center;
+    color: #929292;
 }
 
 .work:hover img{
