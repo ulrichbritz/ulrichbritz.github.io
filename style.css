@@ -9,6 +9,11 @@ html{
     scroll-behavior: smooth;
 }
 
+@font-face {
+    font-family: HelloFont;
+    src: url(Fonts/SuperMario256.ttf);
+}
+
 body{
     background: rgb(12.5, 12.5, 12.5);
     color: #fff;
@@ -49,8 +54,8 @@ nav ul li a{
     color: #000;
     text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff;  
     */
-    color: rgb(0, 0, 0);
-    text-shadow: 0px 0 0 #ffffff, 0 -1px 0 #ffffff, 0 1px 0 #ffffff, -1px 0 0 #ffffff;
+    color: rgb(255, 255, 255);
+    /* text-shadow: 0px 0 0 #ffffff, 0 -1px 0 #ffffff, 0 1px 0 #ffffff, -1px 0 0 #ffffff;*/
     text-decoration: none;
     font-size: 30px;
     font-style:oblique;
@@ -77,8 +82,9 @@ nav ul li a:hover::after{
     color: #000;
     text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff;  
     */
-    color: rgb(0, 0, 0);
-    text-shadow: 1px 0 0 #ffffff, 0 -1px 0 #ffffff, 0 1px 0 #ffffff, -1px 0 0 #ffffff;
+    font-family: 'HelloFont', Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    /* text-shadow: 1px 0 0 #ffffff, 0 -1px 0 #ffffff, 0 1px 0 #ffffff, -1px 0 0 #ffffff; */
     margin-top: 20%;
     font-size: 60px;
     font-weight: bold;
@@ -89,9 +95,9 @@ nav ul li a:hover::after{
     color: #000;
     text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff;  
     */
-    color: rgb(3, 3, 3);
-    text-shadow: 1px 0 0 #ffffff, 0 -1px 0 #ffffff, 0 1px 0 #ffffff, -1px 0 0 #ffffff;
-    font-size: 80px;
+    color: rgb(255, 255, 255);
+    /* text-shadow: 1px 0 0 #ffffff, 0 -1px 0 #ffffff, 0 1px 0 #ffffff, -1px 0 0 #ffffff; */
+    font-size: 100px;
     margin-top: 20px;
 }
 
