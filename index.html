@@ -279,37 +279,46 @@
 
 <script>
     $(document).ready(function(){
-        //making an HTTP GET request to the API endpoint
-        $.get("https://api.worldstone.io/world-bosses/", function(data){
-            //processing the response data
-            var bossData = data;
+        // Function to update the boss timer
+    function updateBossTimer() {
+      // Making an HTTP GET request to the API endpoint
+      $.get("https://api.worldstone.io/world-bosses/", function(data) {
+        // Processing the response data
+        var bossData = data;
 
-            //getting the name of the boss
-            var bossName = bossData.name;
+        // Getting the name of the boss
+        var bossName = bossData.name;
 
-            if(bossName === "Ashava"){
-                bossName = "Ashava the Pestilent";
-            }
-            else if(bossName === "Avarice"){
-                bossName = "Avarice the Gold Cursed"
-            }
-            
-            //getting the time of the boss in minutes
-            var bossTimeMinutes = bossData.time;
+        if (bossName === "Ashava") {
+          bossName = "Ashava the Pestilent";
+        } else if (bossName === "Avarice") {
+          bossName = "Avarice the Gold Cursed";
+        }
 
-            //converting minutes to hours and remaining minutes
-            var hours = Math.floor(bossTimeMinutes / 60);
-            var minutes = bossTimeMinutes % 60;
+        // Getting the time of the boss in minutes
+        var bossTimeMinutes = bossData.time;
 
-            //displaying the boss name and time on the website
-            var bossNameElement = document.querySelector(".d4BossName");
-            var bossTimeElement = document.querySelector(".BossTime");
-            bossNameElement.textContent = "Boss Type: " + bossName;
-            
-            // displaying time in hours and remaining minutes
-            bossTimeElement.textContent = "Spawning in " + hours + " hours and " + minutes + " minutes.";
-        });
-    });
+        // Converting minutes to hours and remaining minutes
+        var hours = Math.floor(bossTimeMinutes / 60);
+        var minutes = bossTimeMinutes % 60;
+
+        // Displaying the boss name and time on the website
+        var bossNameElement = document.querySelector(".d4BossName");
+        var bossTimeElement = document.querySelector(".BossTime");
+        bossNameElement.textContent = "Boss Type: " + bossName;
+
+        // Displaying time in hours and remaining minutes
+        bossTimeElement.textContent =
+          "Spawning in " + hours + " hours and " + minutes + " minutes.";
+      });
+    }
+
+    // Initial call to update the boss timer
+    updateBossTimer();
+
+    // Periodically update the boss timer every minute (adjust the interval as desired)
+    setInterval(updateBossTimer, 60000);
+  });
 </script>
 
 </body>
