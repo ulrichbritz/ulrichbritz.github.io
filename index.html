@@ -7,6 +7,7 @@
     <title>Portfolio of Ulrich Britz - Game/Software Dev</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/6c2aae3f42.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <div id="header">
@@ -20,6 +21,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#diablo-4-world-boss">D4WolrdBoss</a></li>
             </ul>
             <i class="fa-solid fa-ellipsis-vertical" onclick="openmenu()"></i>
         </nav>
@@ -200,6 +202,18 @@
     --->
 </div>
 
+<!-------Diablo 4 World Boss API--------->
+<div id="diablo-4-world-boss">
+    <div class="container">
+            <h1 class="sub-title">Diablo 4 New World Boss Count Down</h1>
+            <div id="diablo-4-world-boss-details">
+                <h2 class="d4BossName"></h2>
+                <div class="BossTime"></div>
+                <div id="bossDetails"></div>
+              </div>
+    </div>
+</div>
+
 
 
 
@@ -259,6 +273,41 @@
         })
     })
   </script>
+
+<script>
+    $(document).ready(function(){
+        //making an HTTP GET request to the API endpoint
+        $.get("https://api.worldstone.io/world-bosses/", function(data){
+            //processing the response data
+            var bossData = data;
+
+            //getting the name of the boss
+            var bossName = bossData.name;
+
+            if(bossName === "Ashava"){
+                bossName = "Ashava the Pestilent";
+            }
+            else if(bossName === "Avarice"){
+                bossName = "Avarice the Gold Cursed"
+            }
+            
+            //getting the time of the boss in minutes
+            var bossTimeMinutes = bossData.time;
+
+            //converting minutes to hours and remaining minutes
+            var hours = Math.floor(bossTimeMinutes / 60);
+            var minutes = bossTimeMinutes % 60;
+
+            //displaying the boss name and time on the website
+            var bossNameElement = document.querySelector(".d4BossName");
+            var bossTimeElement = document.querySelector(".BossTime");
+            bossNameElement.textContent = "Boss Type: " + bossName;
+            
+            // displaying time in hours and remaining minutes
+            bossTimeElement.textContent = "Spawning in " + hours + " hours and " + minutes + " minutes.";
+        });
+    });
+</script>
 
 </body>
 </html>
