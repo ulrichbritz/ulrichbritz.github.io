@@ -268,7 +268,7 @@ nav ul li a:hover::after{
     flex-direction: column;
     padding: 0 40px;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     transition: height 0.5s;
 }
 
