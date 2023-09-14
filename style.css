@@ -229,80 +229,110 @@ nav ul li a:hover::after{
 
 /* ----- portfolio ---- */
 
-#portfolio{
-    padding: 50px;
+#portfolio {
+    padding: 80px; /* Increased padding for more space */
+    position: relative;
+    z-index: 1;
 }
 
-.work-list{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
+.work-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 50px;
 }
 
-.work{
+.work {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Center content vertically */
+    justify-content: space-between; /* Center content horizontally */
     border-radius: 10px;
+    overflow: hidden;
+    background-color: #262626;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
     position: relative;
-    overflow: hidden;
+    width: 100%; /* Set all projects to the same width */
+    max-width: 1200px;
+    height: auto; /* Allow variable height based on content */
+    margin-bottom: 30px;
 }
 
-.work img{
-    width: 100%;
-    border-radius: 10px;
-    display: block;
-    transition: transform 0.5s;
+.image-block {
+    flex-basis: 50%;
+    position: relative;
+    padding: 20px; /* Add some padding for spacing */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
-.layer{
+.image-block img {
     width: 100%;
-    height: 0;
-    background: linear-gradient(rgba(0,0,0,0.6), rgb(17, 101, 211));
+    height: 100%; /* Ensure the image fills the entire container */
+    object-fit: cover; /* Maintain aspect ratio while covering the container */
     border-radius: 10px;
+}
+
+.info-block {
     position: absolute;
-    left: 0;
-    bottom: 0;
+    top: 0;
+    right: 0; /* Adjust the position to the top-right corner */
+    width: 50%; /* Take up 50% of the width */
+    background: rgba(17, 101, 211, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s;
     overflow: hidden;
-    display:flex;
+    max-height: 0;
+    transition: max-height 0.3s, overflow 0.3s; /* Smooth transition for max-height and overflow */
+}
+
+.work:hover .info-block {
+    transform: scaleY(1);
+    max-height: 100%; /* Show the content on hover */
+    overflow: auto; /* Enable scroll bar for overflowing content */
+}
+
+.info-block h3 {
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 18px; /* Adjust text size as needed */
+}
+
+.info-block p {
+    color: #ddd;
+    margin-bottom: 15px;
+    font-size: 14px; /* Adjust text size as needed */
+}
+
+.info-block a {
+    color: #ff004f;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.info-block a:hover {
+    color: #fff;
+}
+
+.video-block {
+    flex-basis: 50%;
+    text-align: center;
+    background: #262626;
+    border-radius: 0 10px 10px 0;
+    display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    text-align: center;
-    font-size: 12px;
-    transition: height 0.5s;
+    height: auto; /* Allow variable height based on content */
 }
 
-.layer h3{
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-
-.layer a{
-    color: #929292;
-}
-
-.work:hover img{
-    transform: scale(1.1);
-}
-
-.work:hover .layer{
-    height: 100%;
-}
-
-.btn{
-    display: block;
-    margin: 50px auto;
-    width: fit-content;
-    border: 1px solid rgb(17, 101, 211);
-    padding: 14px 50px;
-    border-radius: 6px;
-    text-decoration: none;
-    color: white;
-    transition: background 0.5s;
-}
-
-.btn:hover{
-    background: rgb(17, 101, 211);
+.video-block video {
+    max-width: 100%; /* Set maximum width to fit the block */
+    max-height: 100%; /* Set maximum height to maintain aspect ratio */
+    border-radius: 0 10px 10px 0;
 }
 
 /*----------contact----------------*/
