@@ -232,6 +232,7 @@ nav ul li a:hover::after{
 #portfolio {
     position: relative;
     z-index: 1;
+    padding: 80px; /* Increased padding for more space */
 }
 
 .work-list {
@@ -274,15 +275,22 @@ nav ul li a:hover::after{
 }
 
 .info-block {
-    position: relative; /* Reset to relative positioning */
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
     background: rgba(73, 95, 122, 0.8);
     padding: 20px;
-    border-radius: 0 0 10px 10px; /* Adjust border-radius as needed */
-    transform: scaleY(1); /* Ensure it's always displayed */
+    border-radius: 10px;
+    transform: scaleY(0);
     transform-origin: top;
     transition: transform 0.3s;
     overflow: hidden;
+}
+
+.work:hover .info-block {
+    transform: scaleY(1);
 }
 
 .info-block h3 {
@@ -323,6 +331,26 @@ nav ul li a:hover::after{
     max-width: 100%; /* Make sure videos don't overflow */
     max-height: 100%;
     border-radius: 0 10px 10px 0;
+}
+
+/* Media query for smaller screens (e.g., phones) */
+@media (max-width: 768px) {
+    #portfolio {
+        padding: 20px; /* Reduced padding for smaller screens */
+    }
+
+    .work-list {
+        margin-top: 20px; /* Reduced top margin for smaller screens */
+    }
+
+    .work {
+        margin-bottom: 20px; /* Reduced bottom margin for smaller screens */
+    }
+
+    .image-block img {
+        max-width: 100%; /* Adjust image size to fit smaller screens */
+        height: auto; /* Maintain aspect ratio */
+    }
 }
 
 /*----------contact----------------*/
@@ -568,10 +596,6 @@ nav ul .fas {
     font-size: 14px;
 }
 
-/* Portfolio section styles for small screens */
-#portfolio {
-    padding: 40px; /* Increased padding for smaller screens */
-}
 
 .work-list {
     margin-top: 30px; /* Adjusted margin for smaller screens */
