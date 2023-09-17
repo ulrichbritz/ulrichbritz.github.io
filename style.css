@@ -276,7 +276,7 @@ nav ul li a:hover::after{
 .info-block {
     position: relative; /* Reset to relative positioning */
     width: 100%;
-    background: rgba(73, 95, 122, 0.8);
+    background: rgba(49, 53, 58, 0.8);
     padding: 20px;
     border-radius: 0 0 10px 10px; /* Adjust border-radius as needed */
     transform: scaleY(1); /* Ensure it's always displayed */
