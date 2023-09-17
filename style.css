@@ -230,7 +230,6 @@ nav ul li a:hover::after{
 /* ----- portfolio ---- */
 
 #portfolio {
-    padding: 80px; /* Increased padding for more space */
     position: relative;
     z-index: 1;
 }
@@ -244,9 +243,9 @@ nav ul li a:hover::after{
 
 .work {
     display: flex;
-    flex-direction: row;
+    flex-direction: column; /* Change to column layout */
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Center content vertically */
     border-radius: 10px;
     overflow: hidden;
     background-color: #262626;
@@ -254,42 +253,36 @@ nav ul li a:hover::after{
     transition: transform 0.3s;
     position: relative;
     width: 100%;
-    max-width: 1200px;
-    height: auto;
+    max-width: 100%; /* Allow projects to take full width */
     margin-bottom: 30px;
 }
 
 .image-block {
-    flex-basis: 50%;
-    position: relative;
+    flex-basis: auto; /* Remove fixed width */
     padding: 20px;
     box-sizing: border-box;
 }
 
 .image-block img {
-    width: 100%;
-    height: 100%;
+    max-width: 800px; /* Make sure images don't overflow */
+    height: 800px;
     object-fit: cover;
     border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .info-block {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative; /* Reset to relative positioning */
     width: 100%;
-    height: 100%;
     background: rgba(73, 95, 122, 0.8);
     padding: 20px;
-    border-radius: 10px;
-    transform: scaleY(0);
+    border-radius: 0 0 10px 10px; /* Adjust border-radius as needed */
+    transform: scaleY(1); /* Ensure it's always displayed */
     transform-origin: top;
     transition: transform 0.3s;
     overflow: hidden;
-}
-
-.work:hover .info-block {
-    transform: scaleY(1);
 }
 
 .info-block h3 {
@@ -316,7 +309,7 @@ nav ul li a:hover::after{
 }
 
 .video-block {
-    flex-basis: 50%;
+    flex-basis: auto; /* Remove fixed width */
     text-align: center;
     background: #262626;
     border-radius: 0 10px 10px 0;
@@ -327,7 +320,7 @@ nav ul li a:hover::after{
 }
 
 .video-block video {
-    max-width: 100%;
+    max-width: 100%; /* Make sure videos don't overflow */
     max-height: 100%;
     border-radius: 0 10px 10px 0;
 }
