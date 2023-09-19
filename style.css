@@ -320,7 +320,7 @@ nav ul li a:hover::after{
 }
 
 .video-block video {
-    max-width: 100%; /* Make sure videos don't overflow */
+    width: 800px; /* Make sure videos don't overflow */
     max-height: 100%;
     border-radius: 0 10px 10px 0;
 }
@@ -345,6 +345,12 @@ nav ul li a:hover::after{
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .video-block video {
+        width: 100%; /* Make sure videos don't overflow */
+        max-height: 100%;
+        border-radius: 0 10px 10px 0;
     }
 }
 
