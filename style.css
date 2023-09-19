@@ -264,7 +264,7 @@ nav ul li a:hover::after{
 }
 
 .image-block img {
-    max-width: 800px; /* Make sure images don't overflow */
+    max-width: 1200px; /* Make sure images don't overflow */
     height: 800px;
     object-fit: cover;
     border-radius: 10px;
@@ -275,7 +275,7 @@ nav ul li a:hover::after{
 
 .info-block {
     position: relative; /* Reset to relative positioning */
-    width: 100%;
+    width: 1200px;
     background: rgba(49, 53, 58, 0.8);
     padding: 20px;
     border-radius: 0 0 10px 10px; /* Adjust border-radius as needed */
@@ -333,6 +333,7 @@ nav ul li a:hover::after{
     }
 
     .info-block {
+        width: 100%;
         height: auto; /* Change height to auto for smaller screens */
         transform: scaleY(1); /* Ensure it's always displayed */
     }
