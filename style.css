@@ -36,11 +36,11 @@ nav {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    position: fixed; /* Add this line */
-    top: 0; /* Position it at the top */
-    left: 0; /* Stretch it across the left */
-    width: 100%; /* Stretch it across the full width */
-    z-index: 1000; /* Make sure it stacks on top of other content */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
     padding: 10px 10%;
 }
 
