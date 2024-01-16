@@ -50,7 +50,7 @@ nav ul {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 28px;
     margin: 0 20px;
 }
 
@@ -71,6 +71,8 @@ nav ul li a:hover::after {
     font-family: 'HelloFont', Arial, sans-serif;
     text-align: center;
     margin-top: 15%;
+    font-size: 60px;
+    font-weight: bold;
 }
 
 .header-text h1 {
@@ -81,6 +83,13 @@ nav ul li a:hover::after {
 
 .header-text h1 span {
     color: rgb(192, 3, 3);
+}
+
+.sub-title {
+    font-size: 50px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 20px;
 }
 
 /* About Section Styles */
