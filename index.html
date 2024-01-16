@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<div id="header">
+<header id="header">
     <div class="container">
         <nav>
             <img src="images/logo.png" class="logo">
@@ -29,9 +29,9 @@
             <h1>Hello World! I'm <span>Ulrich</span> Britz.</h1>
         </div>
     </div>
-</div>
-<!----------about------------->
-<div id="about">
+</header>
+
+<section id="about">
     <div class="container">
         <div class="row">
             <div class="about-col-1">
@@ -75,9 +75,9 @@
             </div>
         </div>
     </div>
-</div>
-<!--------------Services------------>
-<div id="services">
+</section>
+
+<section id="services">
     <div class="container">
         <h1 class="sub-title">My Services</h1>
         <div class="services-list">
@@ -113,19 +113,16 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<!-------Portfolio----------->
-<div id="portfolio">
+<section id="portfolio">
     <div class="container">
         <h1 class="sub-title">My Work</h1>
         <div class="work-list">
-             <!-- Project 1: Sunblink -->
-             <div class="work">
-                <!-- Centered image block -->
+            <!-- Project 1: Sunblink -->
+            <div class="work">
                 <div class="image-block">
                     <img src="images/Sunblink/HelloKitty2.png" alt="Project Image">
-                    <!-- Information displayed on hover -->
                     <div class="info-block">
                         <h3>Sunblink Entertainment</h3>
                         <p>Since October 2023, I have been working as a Junior Engineer here at Sunblink Entertainment!</p>
@@ -134,17 +131,15 @@
                         <a href="https://www.sunblink.com/" target="_blank">Click HERE to view our Website.</a>
                     </div>
                 </div>
-                <!-- Right block for video -->
                 <div class="video-block">
                     <video controls src="https://www.youtube.com/watch?v=jDboWbYyEMs&pp=ygUlaGVsbG8ga2l0dHkgaXNsYW5kIGFkdmVudHVyZXMgdHJhaWxlcg%3D%3D" width="500"></video>
                 </div>
             </div>
+
             <!-- Project 2: Andromaverse -->
             <div class="work">
-                <!-- Centered image block -->
                 <div class="image-block">
                     <img src="images/Andromaverse/StartScreen.jpg" alt="Project Image">
-                    <!-- Information displayed on hover -->
                     <div class="info-block">
                         <h3>Andromaverse</h3>
                         <p>I spent 2 years working for Andromaverse on an exciting 2.5D open-world RPG game built on the blockchain. It incorporates the innovative use of Crypto transactions and NFTs from the exclusive Andromaverse Collection.</p>
@@ -155,7 +150,6 @@
                         <a href="https://andromaverse.io/" target="_blank">Click HERE to Learn more on their website.</a>
                     </div>
                 </div>
-                <!-- Right block for video -->
                 <div class="video-block">
                     <video controls src="videos/Andromaverse/Andromaverse Alpha Gameplay.mp4" width="500"></video>
                 </div>
@@ -165,18 +159,14 @@
             </div>
             <!-- Project 3: Dice-Fall-Chronicles -->
             <div class="work">
-                <!-- Centered image block -->
                 <div class="image-block">
                     <img src="images/DiceFall Chronicles/DiceFall.png" alt="Project Image">
-                    <!-- Information displayed on hover -->
                     <div class="info-block">
                         <h3>Dice-Fall-Chronicles</h3>
                         <p>In my spare time, I am currently dedicated to developing a 3rd person Fantasy RPG which includes tactical battles, 
-                            which will in time be demonstated as a tech demo.</p>
-                        <br>
+                            which will in time be demonstrated as a tech demo.</p>
                         <p>Here are some of the key features already implemented in the game:</p>
-                        <br>
-                        <p>- A smooth Camera and Movement system, both in free roam and tactical format. </p>
+                        <p>- A smooth Camera and Movement system, both in free roam and tactical format.</p>
                         <p>- An intuitive Inventory and Equipment System that allows players to manage and organize their items and gear efficiently.</p>
                         <p>- A Branching Dialogue System. Where NPC's are fit with Animation Rigging.</p>
                         <p>- A turn-based tactical Battle System that encompasses a wide range of actions, including light and heavy attacks, managing stamina, health, 
@@ -186,7 +176,6 @@
                         <p>- A Day/Night and date system.</p>
                     </div>
                 </div>
-                <!-- Right block for video -->
                 <div class="video-block">
                     <video controls src="videos/Souls_Like_Multiplayer/SLM_Battles.mp4" width="500"></video>
                 </div>
@@ -194,85 +183,48 @@
                     <video controls src="videos/Souls_Like_Multiplayer/SLM_Multiplayer.mp4" width="500"></video>
                 </div>
             </div>
+
             <!-- Project 4: DungeonCrawler -->
             <div class="work">
-                <!-- Centered image block -->
                 <div class="image-block">
                     <img src="images/DungeonCrawler/Dungeon_Crawler.png" alt="Project Image">
-                    <!-- Information displayed on hover -->
                     <div class="info-block">
                         <h3>Dungeon Crawler</h3>
-                    <p>I set a challenge to myself to create and complete a game in 7 days.</p>
-                    <br>
-                    <p>Although not complete, here is what came from 7 days of work in my spare time.</p>
-                    <br>
-                    <p>- A smooth Camera and Movement system. </p>
-                    <p>- An Inventory System that allows players to manage and organize their items and gear.</p>
-                    <p>- Procedual dungeon generation.</p>
-                    <p>- Procedual enemy spawning.</p>
-                    <p>- AI enemies with an alert and roaming system.</p>
-                    <p>- A character selection screen.</p>
-                    <p>- A simple battle system.</p>
-                    <p>- An ability system.</p>
-                    <p>- A shop.</p>
+                        <p>I set a challenge to myself to create and complete a game in 7 days.</p>
+                        <p>Although not complete, here is what came from 7 days of work in my spare time.</p>
+                        <p>- A smooth Camera and Movement system.</p>
+                        <p>- An Inventory System that allows players to manage and organize their items and gear.</p>
+                        <p>- Procedural dungeon generation.</p>
+                        <p>- Procedural enemy spawning.</p>
+                        <p>- AI enemies with an alert and roaming system.</p>
+                        <p>- A character selection screen.</p>
+                        <p>- A simple battle system.</p>
+                        <p>- An ability system.</p>
+                        <p>- A shop.</p>
                     </div>
                 </div>
-                <!-- Right block for video -->
                 <div class="video-block">
                     <video controls src="videos/Dungeon Crawler/DG_01.mp4" width="500"></video>
                 </div>
             </div>
             <!-- Project 5: The Girl -->
             <div class="work">
-                <!-- Centered image block -->
                 <div class="image-block">
                     <img src="images/TheGirl/The_Girl.png" alt="Project Image">
-                    <!-- Information displayed on hover -->
                     <div class="info-block">
                         <h3>The_Girl, an interactive twine story I wrote.</h3>
-                    <p>During on of my interactive media courses at Wilfred Laurier I created and interactive story for one of my assignments.</p>
-                    <br>
-                    <p>I hope to show some of my narrative/story telling abilities with this example.</p>
-                    <br>
-                    <p>If you are interested and have the time, please give it a read, it should only take about 5 minutes.</p>
-                    <br>
-                    
-                    <a href="Docs/The-Girl.html" download class="btn btn2">Download the HTML and play!</a>
+                        <p>During one of my interactive media courses at Wilfred Laurier, I created an interactive story for one of my assignments.</p>
+                        <p>I hope to show some of my narrative/storytelling abilities with this example.</p>
+                        <p>If you are interested and have the time, please give it a read, it should only take about 5 minutes.</p>
+                        <a href="Docs/The-Girl.html" download class="btn btn2">Download the HTML and play!</a>
                     </div>
                 </div>
-                <!-- Right block for video -->
-                <!---
-                <div class="video-block">
-                    <video controls src="videos/Dungeon Crawler/Top_Down_AM_11_09_2023.mp4" width="500"></video>
-                </div>
-                --->
             </div>
         </div>
     </div>
-</div>
+</section>
 
-
-
-
-<!---
------Diablo 4 World Boss API---------
-<div id="diablo-4-world-boss">
-    <div class="container">
-            <h1 class="sub-title">Diablo 4 New World Boss Count Down</h1>
-            <div id="diablo-4-world-boss-details">
-                <h2 class="d4BossName"></h2>
-                <div class="BossTime"></div>
-                <div id="bossDetails"></div>
-            </div>
-            <div id="credit">
-                <h4 class="diablo-api-credit">"World Boss data provided by the World Boss API from WorldStone (https://api.worldstone.io/world-bosses/)."</h4>
-            </div>
-    </div>
-</div>
---->
-
-<!------------contact---------->
-<div id="contact">
+<footer id="contact">
     <div class="container">
         <div class="row">
             <div class="contact-left">
@@ -287,30 +239,9 @@
                 </div>
                 <a href="Docs/Ulrich_Resume.pdf" download class="btn btn2">Download Resume</a>
             </div>
-            <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">submit</button>
-                </form>
-                <span id="msg"></span>
-            </div>
+</footer>
 
-        </div>
-    </div>
-    <!---
-    <div class="copyright">
-        <p>Copyright <i class="fa-regular fa-copyright"></i> Ulrich Britz <i class="fa-solid fa-gamepad"></i>. Made following Easy Tutorials</p>
-    </div>
-    --->
-</div>
-
-
-
-
-
-
+<!----JavaScript---->>
 <script>
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
@@ -342,75 +273,5 @@
     }
 
 </script>
-
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyPzT4GT9cLdaXlfZ_3WknqoCJY9-_V9yDmMb36uc3bVd_gAkmc5T-kgFtPI8jmZNG0pA/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message Sent!";
-            setTimeout(function(){
-                msg.innerHTML = "";
-            }, 5000)
-            form.reset()
-        })
-        .catch(error => {
-            msg.innerHTML = "Message Sent!";
-            setTimeout(function(){
-                msg.innerHTML = "";
-            }, 5000)
-            form.reset()
-        })
-    })
-  </script>
-
-<script>
-    $(document).ready(function(){
-        // Function to update the boss timer
-    function updateBossTimer() {
-      // Making an HTTP GET request to the API endpoint
-      $.get("https://api.worldstone.io/world-bosses/", function(data) {
-        // Processing the response data
-        var bossData = data;
-
-        // Getting the name of the boss
-        var bossName = bossData.name;
-
-        if (bossName === "Ashava") {
-          bossName = "Ashava the Pestilent";
-        } else if (bossName === "Avarice") {
-          bossName = "Avarice the Gold Cursed";
-        }
-
-        // Getting the time of the boss in minutes
-        var bossTimeMinutes = bossData.time;
-
-        // Converting minutes to hours and remaining minutes
-        var hours = Math.floor(bossTimeMinutes / 60);
-        var minutes = bossTimeMinutes % 60;
-
-        // Displaying the boss name and time on the website
-        var bossNameElement = document.querySelector(".d4BossName");
-        var bossTimeElement = document.querySelector(".BossTime");
-        bossNameElement.textContent = "Boss Type: " + bossName;
-
-        // Displaying time in hours and remaining minutes
-        bossTimeElement.textContent =
-          "Spawning in " + hours + " hours and " + minutes + " minutes.";
-      });
-    }
-
-    // Initial call to update the boss timer
-    updateBossTimer();
-
-    // Periodically update the boss timer every minute (adjust the interval as desired)
-    setInterval(updateBossTimer, 60000);
-  });
-</script>
-
 </body>
 </html>
