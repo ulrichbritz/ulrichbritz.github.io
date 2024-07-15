@@ -245,6 +245,12 @@ nav ul li a:hover::after {
     border-radius: 10px;
 }
 
+#portfolio .video-block iframe {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
 /* Contact Section Styles */
 #contact {
     background: #282828;
