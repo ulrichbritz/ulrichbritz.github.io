@@ -51,6 +51,17 @@ body {
     color: rgb(192, 3, 3);
 }
 
+#sidemenu .close-btn {
+    text-align: right;
+    padding: 10px 20px;
+}
+
+#sidemenu .close-btn i {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
 /* ------------- */
 /* CONTAINER     */
 /* ------------- */
@@ -91,11 +102,16 @@ nav {
     height: 40px;
 }
 
+/* Default (desktop) - show inline nav, hide ellipsis and side menu */
 nav ul {
-    list-style: none;
     display: flex;
-    align-items: center;
-    height: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+nav ul li {
+    list-style-type: none;
 }
 
 nav ul li a {
@@ -122,6 +138,14 @@ nav ul li a::after {
 
 nav ul li a:hover::after {
     width: 100%;
+}
+
+.nav-right {
+    display: none;
+}
+
+.close-btn {
+    display: none;
 }
 
 /* ---------------- */
@@ -345,6 +369,15 @@ nav ul li a:hover::after {
         padding-top: 30px;
         transition: right 0.3s ease;
         z-index: 1001;
+
+        /* Center links vertically and horizontally */
+        display: flex;
+        flex-direction: column;
+        align-items: center;     /* Center horizontally */
+        justify-content: flex-start;    /* Start from the top */
+
+        list-style: none;
+        padding-left: 0;
     }
 
     .fa-ellipsis-vertical {
@@ -353,6 +386,20 @@ nav ul li a:hover::after {
 
     nav ul li {
         margin: 20px 0;
+        list-style-type: none;
+    }
+
+    nav ul li a {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .nav-right {
+        display: flex;
+    }
+
+    .close-btn {
+        display: block;
     }
 
     #header {
@@ -396,7 +443,5 @@ nav ul li a:hover::after {
 }
 
 @media (max-width: 600px) {
-    nav ul li a {
-        font-size: 18px;
-    }
+
 }
