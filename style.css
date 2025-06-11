@@ -671,7 +671,17 @@ input:checked + .slider:before {
     }
 
     .services-list {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .services-list div {
+        height: 100%; 
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 400px; 
     }
 
     .work-list {
