@@ -150,6 +150,17 @@ nav ul li a:hover::after {
     padding: 0 20px;
 }
 
+#about .about-col-2 ul {
+    padding-left: 20px;         
+    list-style-position: outside; 
+    margin: 10px 0;
+}
+
+#about .about-col-2 li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
 .sub-title {
     font-size: 50px;
     font-weight: 600;
