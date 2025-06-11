@@ -38,45 +38,96 @@
 </header>
 
 <section id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src ="images/ulrich.jpg">
-            </div>
-            <div class="about-col-2">
-                <h1 class="sub-title">About Me</h1>
-                <br>
-                <p>Hey there!</p>
-                <br>
-                <p>I am an enthusiastic and driven aspiring Game Designer, with a thirst for knowledge and the will to learn.</p>
-                <br>
-                <p>Originally from South Africa, I relocated to Canada in 2018 to pursue my passion. In 2022, I proudly earned my Honours Bachelor 
-                    of Fine & Applied Arts degree, majoring in Game Design and Development with a minor in Leadership from Wilfrid Laurier University.</p>
-                <br>
-                <p>With my education and experiences, I am filled with optimism for the future, eagerly anticipating the opportunities to manifest my creative visions into reality.</p> 
-                <br>
-                <p>Skills - Experience - Education</p>
-                <br>
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>                            <li><span>Game Design and Development</span><br>Unity 2D & 3D</li>
-                        <li><span>Web Development</span><br>Website & Web App Development</li>
-                        <li><span>Languages</span><br>C#, Python, HTML, CSS, JS</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="experience">
-                    <ul>
-                        <li><span>2023 - Present</span><br>Sunblink Entertainment LLC - Junior Engineer</li>
-                        <li><span>2022 - 2023  </span><br>Andromaverse Labs - Sole Game Engineer</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="education">
-                    <ul>
-                        <li><span>2018 - 2022 </span><br>Wilfred Laurier University - Honours Degree in Game Design and Development and Minor in Leadership.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <h1 class="sub-title" style="text-align: center;">About Me</h1>
+    
+    <!-- Toggle switch -->
+    <div class="toggle-container">
+      <label class="switch">
+        <input type="checkbox" id="toggle-terminal" checked>
+        <span class="slider round"></span>
+      </label>
+      <span class="toggle-label">Terminal View</span>
     </div>
+
+    <div class="row">
+      <div class="about-col-1">
+        <img src="images/ulrich.jpg" alt="Ulrich Britz">
+      </div>
+
+      <!-- Terminal style block -->
+      <div class="about-col-2 about-terminal" id="terminalView">
+        <div class="terminal-window">
+          <div class="terminal-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <pre class="terminal-content">
+C:\Users\UlrichBritz> about me
+
+Hey there!
+
+I am an enthusiastic and driven aspiring Game Designer, with a thirst for knowledge and the will to learn.
+
+Originally from South Africa, I relocated to Canada in 2018 to pursue my passion.
+
+In 2022, I proudly earned my Honours Bachelor of Fine & Applied Arts degree, majoring in Game Design and Development with a minor in Leadership from Wilfrid Laurier University.
+
+With my education and experiences, I am filled with optimism for the future, eagerly anticipating the opportunities to manifest my creative visions into reality.
+
+C:\Users\UlrichBritz> skills
+
+Game Design and Development: Unity 2D & 3D  
+Web Development: Website & Web App Development  
+Languages: C#, Python, HTML, CSS, JS
+
+C:\Users\UlrichBritz> experience
+
+- 2023–Present: Junior Engineer @ Sunblink Entertainment  
+- 2022–2023: Sole Game Engineer @ Andromaverse Labs
+
+C:\Users\UlrichBritz> education
+
+- 2018–2022: Wilfrid Laurier University — Honours BFA, Minor in Leadership
+
+C:\Users\UlrichBritz>_
+          </pre>
+        </div>
+      </div>
+
+      <!-- Normal text layout -->
+      <div class="about-col-2 about-standard" id="standardView" style="display: none;">
+        <p>Hey there!</p>
+        <br>
+        <p>I am an enthusiastic and driven aspiring Game Designer, with a thirst for knowledge and the will to learn.</p>
+        <br>
+        <p>Originally from South Africa, I relocated to Canada in 2018 to pursue my passion. 
+            In 2022, I proudly earned my Honours Bachelor of Fine & Applied Arts degree, majoring in Game Design and Development with a minor in Leadership 
+            from Wilfrid Laurier University.</p>
+        <br>
+        <p>With my education and experiences, I am filled with optimism for the future, eagerly anticipating the opportunities to manifest my creative visions into reality.</p>
+        <br>
+        <h4>Skills - Experience - Education</h4>
+        <ul>
+          <li><strong>Game Design and Development:</strong> Unity 2D & 3D</li>
+          <li><strong>Web Development:</strong> Website & Web App Development</li>
+          <li><strong>Languages:</strong> C#, Python, HTML, CSS, JS</li>
+        </ul>
+
+        <h4>Experience</h4>
+        <ul>
+          <li>2023–Present: Junior Engineer @ Sunblink Entertainment</li>
+          <li>2022–2023: Sole Game Engineer @ Andromaverse Labs</li>
+        </ul>
+
+        <h4>Education</h4>
+        <ul>
+          <li>2018–2022: Wilfrid Laurier University — Honours BFA, Minor in Leadership</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="services">
@@ -399,6 +450,23 @@
       return `<li class="${i === selectedIndex ? 'selected' : ''}">${cmd.name}</li>`;
     }).join("");
   }
+</script>
+
+<!-- Terminal Toggle Script -->
+<script>
+  const toggle = document.getElementById("toggle-terminal");
+  const terminalView = document.getElementById("terminalView");
+  const standardView = document.getElementById("standardView");
+
+  toggle.addEventListener("change", () => {
+    if (toggle.checked) {
+      terminalView.style.display = "block";
+      standardView.style.display = "none";
+    } else {
+      terminalView.style.display = "none";
+      standardView.style.display = "block";
+    }
+  });
 </script>
 
 </body>
