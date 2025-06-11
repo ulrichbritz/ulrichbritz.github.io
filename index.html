@@ -16,27 +16,24 @@
             <div class="nav-left">
                 <img src="images/logo.png" class="logo">
             </div>
-
             <ul id="sidemenu">
                 <li><a href="#header">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <!--- <li><a href="#diablo-4-world-boss">D4BossAPI</a></li> --->
             </ul>
-
             <div class="nav-right">
                 <i class="fa-solid fa-ellipsis-vertical" onclick="openmenu()"></i>
             </div>
         </nav>
-
         <div class="header-text">
             <p>Game and Software Dev</p>
             <h1>Hello World! I'm <span>Ulrich</span> Britz.</h1>
         </div>
     </div>
 </header>
+
 <section id="about">
     <div class="container">
         <div class="row">
@@ -231,7 +228,7 @@
         <div class="row">
             <div class="contact-left">
                 <h1 class="sub-title">Contact Me</h1>
-                <p><i class="fa-solid fa-envelope"></i></i> ulrich.britz1998@gmail.com</p>
+                <p><i class="fa-solid fa-envelope"></i> ulrich.britz1998@gmail.com</p>
                 <p><i class="fa-solid fa-mobile-screen-button"></i> +1 416 845 9009</p>
                 <div class="social-icons">
                     <a href="https://www.instagram.com/ulrichbritz/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
@@ -241,39 +238,32 @@
                 </div>
                 <a href="Docs/Ulrich_Resume.pdf" download class="btn btn2">Download Resume</a>
             </div>
+        </div>
+    </div>
 </footer>
 
-<!----JavaScript---->>
 <script>
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
+    const tablinks = document.getElementsByClassName("tab-links");
+    const tabcontents = document.getElementsByClassName("tab-contents");
 
-    function opentab(tabname){
-        for(tablink of tablinks){
+    function opentab(tabname, event) {
+        for (let tablink of tablinks) {
             tablink.classList.remove("active-link");
         }
-
-        for(tabcontent of tabcontents){
+        for (let tabcontent of tabcontents) {
             tabcontent.classList.remove("active-tab");
         }
-
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
     }
-</script>
 
-<script>
-
-    var sidemenu = document.getElementById("sidemenu");
-
-    function openmenu(){
-        sidemenu.style.right = "0";
+    function openmenu() {
+        document.getElementById("sidemenu").style.right = "0";
     }
 
-    function closemenu(){
-        sidemenu.style.right = "-200px";
+    function closemenu() {
+        document.getElementById("sidemenu").style.right = "-200px";
     }
-
 </script>
 </body>
 </html>
