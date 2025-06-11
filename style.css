@@ -374,7 +374,7 @@ nav ul li a:hover::after {
         position: fixed;
         top: 56px;
         right: -100%; /* Hide off-screen */
-        width: 100%;
+        width: 50%;
         height: 100vh;
         background-color: #111;
         padding-top: 60px;
