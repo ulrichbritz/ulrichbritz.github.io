@@ -660,6 +660,12 @@ input:checked + .slider:before {
         max-height: unset;
     }
 
+    .about-col-2,
+    .terminal-window,
+    .terminal-content {
+        text-align: left;
+    }
+
     .about-col-1 img {
         width: 100%;
         height: auto;
