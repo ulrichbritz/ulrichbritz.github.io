@@ -245,6 +245,22 @@ nav ul li a:hover::after {
 }
 
 /* -------------------- */
+/* GitHub Calendar */
+/* -------------------- */
+.github-heatmap {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.github-heatmap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+
+/* -------------------- */
 /* SECTION: PORTFOLIO   */
 /* -------------------- */
 #portfolio {
