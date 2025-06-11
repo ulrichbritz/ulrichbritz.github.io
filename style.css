@@ -366,6 +366,20 @@ nav ul li a:hover::after {
     color: #111;
 }
 
+
+/* ------------------------- */
+/* TYPEWRITER EFFECT FOR HEADER/Subtitle TEXT */
+/* ------------------------- */
+.typewriter::after {
+    content: '|';
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 /* ------------------------- */
 /* RESPONSIVE NAV TOGGLE    */
 /* ------------------------- */
