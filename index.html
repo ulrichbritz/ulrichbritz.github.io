@@ -248,6 +248,17 @@
     </div>
 </footer>
 
+<!-- Command Palette -->
+<div id="command-palette">
+  <input type="text" id="command-input" placeholder="Type a command..." autocomplete="off" />
+  <ul id="command-list"></ul>
+</div>
+
+
+
+
+<!-- SCRIPTS -->
+
 <!-- Navigation Tabs -->
 <script>
     const tablinks = document.getElementsByClassName("tab-links");
@@ -295,5 +306,100 @@
 
     window.onload = typeWriter;
 </script>
+
+<!-- Command Palette Script -->
+<script>
+  const palette = document.getElementById("command-palette");
+  const input = document.getElementById("command-input");
+  const list = document.getElementById("command-list");
+
+  const commands = [
+    { name: "Go to About", action: () => location.href = "#about" },
+    { name: "Go to Services", action: () => location.href = "#services" },
+    { name: "Go to Portfolio", action: () => location.href = "#portfolio" },
+    { name: "Go to Contact", action: () => location.href = "#contact" },
+    { name: "Scroll to top", action: () => window.scrollTo({ top: 0, behavior: "smooth" }) },
+    { name: "Download Resume", action: () => window.open("Docs/Ulrich_Resume.pdf", "_blank") },
+    { name: "Visit LinkedIn", action: () => window.open("https://www.linkedin.com/in/ulrich-britz-701a49165/", "_blank") },
+    { name: "Visit GitHub", action: () => window.open("https://github.com/ulrichbritz", "_blank") },
+    { name: "Say Hello", action: () => alert("👋 Hello! Thanks for exploring my portfolio.") },
+  ];
+
+  let filtered = [];
+  let selectedIndex = -1;
+
+  // Show palette on Ctrl+K or Cmd+K
+  document.addEventListener("keydown", (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+      e.preventDefault();
+      openPalette();
+    } else if (e.key === "Escape") {
+      closePalette();
+    } else if (palette.style.display === "block") {
+      // Handle arrow keys + enter
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        if (filtered.length > 0) {
+          selectedIndex = (selectedIndex + 1) % filtered.length;
+          updateList();
+        }
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        if (filtered.length > 0) {
+          selectedIndex = (selectedIndex - 1 + filtered.length) % filtered.length;
+          updateList();
+        }
+      } else if (e.key === "Enter" && selectedIndex >= 0) {
+        e.preventDefault();
+        filtered[selectedIndex].action();
+        closePalette();
+      }
+    }
+  });
+
+  function openPalette() {
+    palette.style.display = "block";
+    input.value = "";
+    list.innerHTML = "";
+    input.focus();
+    filtered = [...commands];
+    selectedIndex = -1;
+    updateList();
+  }
+
+  function closePalette() {
+    palette.style.display = "none";
+    selectedIndex = -1;
+  }
+
+  input.addEventListener("input", () => {
+    const term = input.value.toLowerCase();
+    filtered = commands.filter(cmd => cmd.name.toLowerCase().includes(term));
+    selectedIndex = -1;
+    updateList();
+  });
+
+  list.addEventListener("click", (e) => {
+    const clicked = e.target.textContent;
+    const cmd = filtered.find(c => c.name === clicked);
+    if (cmd) {
+      cmd.action();
+      closePalette();
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!palette.contains(e.target) && e.target !== input) {
+      closePalette();
+    }
+  });
+
+  function updateList() {
+    list.innerHTML = filtered.map((cmd, i) => {
+      return `<li class="${i === selectedIndex ? 'selected' : ''}">${cmd.name}</li>`;
+    }).join("");
+  }
+</script>
+
 </body>
 </html>

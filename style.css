@@ -382,6 +382,58 @@ nav ul li a:hover::after {
     color: #111;
 }
 
+/* ------------------------- */
+/* Command Palette for quick navigation */
+#command-palette {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  border: 2px solid #00aaff;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  z-index: 9999;
+  padding: 15px;
+  display: none;
+}
+
+#command-palette input {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  background: #000;
+  color: #0f0;
+  border: none;
+  outline: none;
+  font-family: monospace;
+}
+
+#command-list {
+  list-style: none;
+  margin-top: 10px;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#command-list li {
+  padding: 8px;
+  color: #ccc;
+  font-family: monospace;
+  cursor: pointer;
+}
+
+#command-list li:hover {
+  background-color: #00aaff;
+  color: black;
+}
+
+#command-list li.selected {
+  background-color: #333;
+  color: #fff;
+}
 
 /* ------------------------- */
 /* TYPEWRITER EFFECT FOR HEADER/Subtitle TEXT */
