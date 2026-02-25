@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRDRGK3WZ6"></script>
@@ -38,6 +38,9 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
                 <i class="fa-solid fa-ellipsis-vertical" onclick="openmenu()"></i>
             </div>
         </nav>
@@ -479,6 +482,36 @@ C:\Users\UlrichBritz>_
       standardView.style.display = "block";
     }
   });
+</script>
+
+<!-- Dark/Light Mode Toggle Script -->
+<script>
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeIcon = themeToggle.querySelector("i");
+  
+  // Check for saved preference or default to dark
+  const savedTheme = localStorage.getItem("theme") || "dark";
+  document.documentElement.setAttribute("data-theme", savedTheme);
+  updateIcon(savedTheme);
+  
+  themeToggle.addEventListener("click", () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+    updateIcon(newTheme);
+  });
+  
+  function updateIcon(theme) {
+    if (theme === "light") {
+      themeIcon.classList.remove("fa-sun");
+      themeIcon.classList.add("fa-moon");
+    } else {
+      themeIcon.classList.remove("fa-moon");
+      themeIcon.classList.add("fa-sun");
+    }
+  }
 </script>
 
 </body>

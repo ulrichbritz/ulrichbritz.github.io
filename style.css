@@ -12,15 +12,70 @@ html {
     scroll-behavior: smooth;
 }
 
+/* ------------------- */
+/* CSS VARIABLES FOR THEMING */
+/* ------------------- */
+:root {
+    --bg-primary: rgb(12.5, 12.5, 12.5);
+    --bg-secondary: #111;
+    --bg-tertiary: #1a1a1a;
+    --bg-card: #333;
+    --bg-contact: #282828;
+    --text-primary: #fff;
+    --text-secondary: #ccc;
+    --accent-red: #ff004f;
+    --accent-blue: #00aaff;
+    --terminal-bg: #0d0d0d;
+    --terminal-bar: #1a1a1a;
+    --terminal-text: #00ff00;
+}
+
+[data-theme="light"] {
+    --bg-primary: #e0e0e0;
+    --bg-secondary: #d0d0d0;
+    --bg-tertiary: #c8c8c8;
+    --bg-card: #f0f0f0;
+    --bg-contact: #d5d5d5;
+    --text-primary: #1a1a1a;
+    --text-secondary: #333;
+    --terminal-bg: #1e1e1e;
+    --terminal-bar: #2d2d2d;
+    --terminal-text: #00ff00;
+}
+
+/* Light mode specific overrides */
+[data-theme="light"] .info-block {
+    background: rgba(30, 30, 30, 0.9);
+    color: #fff;
+}
+
+[data-theme="light"] .info-block p,
+[data-theme="light"] .info-block a {
+    color: #ccc;
+}
+
+[data-theme="light"] .sub-title {
+    color: #1a1a1a;
+}
+
+[data-theme="light"] .toggle-label {
+    color: #1a1a1a;
+}
+
+[data-theme="light"] #header {
+    background: linear-gradient(rgba(200,200,200,0.85), rgba(200,200,200,0.85)), url(images/BG/BG.png) no-repeat center/cover;
+}
+
 @font-face {
     font-family: HelloFont;
     src: url(Fonts/SuperMario256.ttf);
 }
 
 body {
-    background: rgb(12.5, 12.5, 12.5);
-    color: #fff;
+    background: var(--bg-primary);
+    color: var(--text-primary);
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ------------ */
@@ -29,8 +84,8 @@ body {
 #header {
     width: 100%;
     height: 100vh;
-    background: #111 url(images/BG/BG.png) no-repeat center/cover;
-    border: 1px solid #111;
+    background: var(--bg-secondary) url(images/BG/BG.png) no-repeat center/cover;
+    border: 1px solid var(--bg-secondary);
 }
 
 .header-text {
@@ -43,7 +98,7 @@ body {
 
 .header-text h1 {
     font-size: 2.5rem;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 1rem;
 }
 
@@ -78,13 +133,31 @@ nav {
     align-items: center;
     height: 56px;
     padding: 0 5%;
-    background-color: #111;
+    background-color: var(--bg-secondary);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    margin-right: 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--accent-blue);
+    transform: rotate(20deg);
 }
 
 .logo {
@@ -97,9 +170,14 @@ nav {
     font-size: 20px;
     color: white;
     cursor: pointer;
-    display: none;
+    display: none !important;
     align-items: center;
     height: 40px;
+}
+
+/* Theme toggle always visible */
+.theme-toggle {
+    display: flex;
 }
 
 /* Default (desktop) - show inline nav, hide ellipsis and side menu */
@@ -121,7 +199,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: var(--text-primary);
     font-size: 20px;
     padding: 0 10px;
     height: 100%;
@@ -146,7 +224,8 @@ nav ul li a:hover::after {
 }
 
 .nav-right {
-    display: none;
+    display: flex;
+    align-items: center;
 }
 
 .close-btn {
@@ -271,8 +350,8 @@ input:checked + .slider:before {
 
 /* Terminal Style */
 .terminal-window {
-  background-color: #0d0d0d;
-  color: #00ff00;
+  background-color: var(--terminal-bg);
+  color: var(--terminal-text);
   font-family: 'Courier New', Courier, monospace;
   padding: 0;
   border-radius: 8px;
@@ -287,7 +366,7 @@ input:checked + .slider:before {
   display: flex;
   gap: 8px;
   padding: 8px 16px;
-  background-color: #1a1a1a;
+  background-color: var(--terminal-bar);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   width: 100%; 
@@ -337,7 +416,7 @@ input:checked + .slider:before {
 }
 
 .services-list div {
-    background: #333;
+    background: var(--bg-card);
     padding: 20px;
     border-radius: 10px;
     height: 350px;
@@ -360,12 +439,12 @@ input:checked + .slider:before {
 }
 
 .services-list div h2 {
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 10px;
 }
 
 .services-list div p {
-    color: #ccc;
+    color: var(--text-secondary);
     font-size: 0.9rem;
 }
 
@@ -390,7 +469,8 @@ input:checked + .slider:before {
 /* -------------------- */
 #portfolio {
     padding: 80px 0;
-    background-color: #1a1a1a;
+    background-color: var(--bg-tertiary);
+    transition: background-color 0.3s ease;
 }
 
 .work-list {
@@ -400,10 +480,11 @@ input:checked + .slider:before {
 }
 
 .work {
-    background: #333;
+    background: var(--bg-card);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
 }
 
 .image-block img {
@@ -440,8 +521,9 @@ input:checked + .slider:before {
 /* SECTION: CONTACT  */
 /* ----------------- */
 #contact {
-    background: #282828;
+    background: var(--bg-contact);
     padding: 80px 0;
+    transition: background-color 0.3s ease;
 }
 
 #contact .row {
@@ -583,9 +665,9 @@ input:checked + .slider:before {
         right: -100%; /* Hide off-screen */
         width: 50%;
         height: 100vh;
-        background-color: #111;
+        background-color: var(--bg-secondary);
         padding-top: 60px;
-        transition: right 0.3s ease;
+        transition: right 0.3s ease, background-color 0.3s ease;
         z-index: 1001;
 
         display: flex;
@@ -598,12 +680,23 @@ input:checked + .slider:before {
         margin: 0;
     }
 
+    .theme-toggle {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
     nav ul.show {
         right: 0; /* Show side menu */
     }
 
     .fa-ellipsis-vertical {
-        display: flex;
+        display: flex !important;
     }
 
     .nav-right {
@@ -615,7 +708,7 @@ input:checked + .slider:before {
         position: absolute;
         top: 10px;
         right: 20px;
-        color: white;
+        color: var(--text-primary);
         font-size: 24px;
         cursor: pointer;
     }
@@ -627,7 +720,7 @@ input:checked + .slider:before {
     nav ul li a {
         font-size: 22px;
         text-align: center;
-        color: white;
+        color: var(--text-primary);
         text-decoration: none;
     }
 
